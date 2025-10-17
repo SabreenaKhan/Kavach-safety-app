@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF5F7"
+    android:padding="20dp"
+    tools:context=".MainActivity">
+
+    <!-- Header Section -->
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="KAVACH"
+        android:textColor="#C2185B"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:id="@+id/tv_subtitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Voice Trigger: Say 'SOS' or 'Help me'"
+        android:textColor="#333333"
+        android:textSize="16sp"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/tv_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="24dp"/>
+
+    <!-- Service Toggle Button -->
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/toggle_service"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Activate Voice Monitoring"
+        android:textColor="#333333"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_subtitle"
+        app:thumbTint="@color/material_dynamic_primary40"
+        app:trackTint="#F8BBD0" />
+
+    <TextView
+        android:id="@+id/tv_contact_header"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Emergency Contacts (Max 3)"
+        android:textColor="#C2185B"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toggle_service" />
+
+    <!-- Contact Input Fields -->
+    <LinearLayout
+        android:id="@+id/contact_input_container"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="16dp"
+        android:padding="16dp"
+        android:background="@drawable/rounded"
+        app:layout_constraintTop_toBottomOf="@id/tv_contact_header"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Contact 1 -->
+        <EditText
+            android:id="@+id/et_contact1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Contact 1 Phone Number"
+            android:inputType="phone"
+            android:backgroundTint="#C2185B"
+            android:layout_marginBottom="8dp"
+            android:autofillHints="phone" />
+
+        <!-- Contact 2 -->
+        <EditText
+            android:id="@+id/et_contact2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Contact 2 Phone Number"
+            android:inputType="phone"
+            android:backgroundTint="#C2185B"
+            android:layout_marginBottom="8dp"
+            android:autofillHints="phone" />
+
+        <!-- Contact 3 -->
+        <EditText
+            android:id="@+id/et_contact3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Contact 3 Phone Number"
+            android:inputType="phone"
+            android:backgroundTint="#C2185B"
+            android:autofillHints="phone" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_save_contacts"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Save Contacts"
+        android:backgroundTint="#C2185B"
+        android:paddingVertical="12dp"
+        app:cornerRadius="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/contact_input_container" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
